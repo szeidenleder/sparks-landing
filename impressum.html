@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SPARKS</title>
+  <meta name="description" content="SPARKS — warm souls. open minds" />
+
+  <style>
+    :root {
+      --fg: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.75);
+      --shadow: 0 10px 35px rgba(0,0,0,0.45);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #000;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    .wrap {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Background video */
+    video.bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
+      filter: saturate(1.05) contrast(1.05);
+    }
+
+    /* Dark overlay for readability */
+    .veil {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(0,0,0,0.20), rgba(0,0,0,0.65)),
+        linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.70));
+      pointer-events: none;
+    }
+
+    /* Content overlay */
+    .content {
+      position: relative;
+      height: 100%;
+      display: grid;
+      align-items: end;
+      padding: 22px 18px 26px;
+      color: var(--fg);
+      text-shadow: var(--shadow);
+    }
+
+    .card {
+      max-width: 560px;
+    }
+
+    .brand {
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      font-size: 14px;
+      opacity: 0.95;
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .tagline {
+      margin: 0 0 16px;
+      font-size: 16px;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 42ch;
+    }
+
+    .meta {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      opacity: 0.95;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.65);
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 10px;
+    }
+
+    a.btn {
+      text-decoration: none;
+      color: rgba(255,255,255,0.95);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.15);
+      transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    a.btn:hover {
+      transform: translateY(-1px);
+      background: rgba(0,0,0,0.28);
+      border-color: rgba(255,255,255,0.55);
+    }
+
+    .fine {
+      margin: 0;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      max-width: 64ch;
+    }
+
+    /* Keep layout nice on very tall phones */
+    @media (min-height: 800px) {
+      .content { padding-bottom: 34px; }
+      h1 { font-size: 38px; }
+    }
+
+    /* Optional: center content on desktop while still showing portrait video */
+    @media (min-width: 900px) {
+      .content {
+        align-items: center;
+        justify-items: center;
+        padding: 40px 22px;
+      }
+      .card {
+        background: rgba(0,0,0,0.18);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 24px;
+        padding: 22px 22px 18px;
+        backdrop-filter: blur(10px);
+      }
+    }
+
+.legal-footer {
+  position: fixed;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.45);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  z-index: 10;
+}
+
+.legal-footer a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+}
+
+.legal-footer a:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Replace sparks-bg.mp4 with your filename (keep it portrait if possible) -->
+    <video class="bg" autoplay muted loop playsinline preload="metadata" poster="poster.jpg">
+      <source src="background.mov" type="video/mp4" />
+    </video>
+
+    <div class="veil"></div>
+
+    <div class="content">
+      <div class="card">
+        <p class="brand">warm souls. open minds</p>
+        <h1>SPARKS</h1>
+
+        <p class="tagline">
+
+Imprint: <br><br>
+
+Marco Szeidenleder<br>
+Kottbusser Damm 22<br>
+10967 Berlin<br>
+Germany<br><br>
+
+E-Mail: hello@sparks.berlin<br><br>
+
+Responsible for content according to § 55 Abs. 2 RStV:<br>
+Marco Szeidenleder<br><br><br><br>
+
+
+
+Privacy:<br><br>
+
+This website does not use cookies or tracking.<br>
+Personal data submitted via forms or payment providers is processed solely for the purpose of event organization.<br>
+Third-party services may process data in accordance with their own privacy policies.<br>
+
+        
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+</body>
+</html>
